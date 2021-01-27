@@ -27,7 +27,7 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
-            var ConnectionString = "";
+            var ConnectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = XE)));User Id = system; Password = 113355";
             // Log DB from existing connection
             services.AddDbContext<LogDbContext>(options => options.UseOracle(ConnectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
             // Audit logging connection

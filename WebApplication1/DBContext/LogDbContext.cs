@@ -25,7 +25,7 @@ namespace IdentityServer.DBContext
         {
             builder.Entity<Log>(log =>
             {
-                log.ToTable(TableConsts.Logging, "CRM");
+                log.ToTable(TableConsts.Logging, "ORC_USR");
                 log.HasKey(x => x.Id);
                 log.Property(x => x.Level).HasMaxLength(128);
             });
